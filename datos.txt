@@ -1,0 +1,64 @@
+Nombre: Billie Jean
+Artista: Michael Jackson
+Año: 1982
+Album: Thriller
+--------------------
+Nombre: Smooth Criminal
+Artista: Michael Jackson
+Año: 1987
+Album: Bad
+--------------------
+Nombre: Nadie Es Eterno En El Mundo
+Artista: Dario Gomez
+Año: 1989
+Album: Nuestro Idolo
+--------------------
+Nombre: La Gota Fria
+Artista: Carlos Vives
+Año: 1993
+Album: Clasicos de la Provincia
+--------------------
+Nombre: Los Caminos De La Vida
+Artista: Los Diablitos
+Año: 1993
+Album: Sorpresa Vallenata
+--------------------
+Nombre: Cali Pachanguero
+Artista: Grupo Niche
+Año: 1984
+Album: No Hay Quinto Malo
+--------------------
+Nombre: Lloraras
+Artista: Oscar D Leon
+Año: 1975
+Album: Dimension Latina 75
+--------------------
+Nombre: Bohemian Rhapsody
+Artista: Queen
+Año: 1975
+Album: A Night at the Opera
+--------------------
+Nombre: Welcome To The Jungle
+Artista: Guns N Roses
+Año: 1987
+Album: Appetite for Destruction
+--------------------
+Nombre: Not Like Us
+Artista: Kendrick Lamar
+Año: 2024
+Album: Not Like Us
+--------------------
+Nombre: Bad Guy
+Artista: Billie Eilish
+Año: 2019
+Album: When We All Fall Asleep Where Do We Go
+--------------------
+Nombre: Symphony No 5 in C Minor
+Artista: Ludwig van Beethoven
+Año: 1808
+Album: Beethoven Symphonies
+--------------------
+Nombre: In the End
+Artista: Linkin Park
+Año: 2000
+Album: Hybrid Theory
