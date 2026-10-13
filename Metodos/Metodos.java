@@ -58,7 +58,6 @@ public class Metodos {
         String ROJO = "\u001B[31m";
         String VERDE = "\u001B[32m";
 
-   
         boolean continuar = true;
         Objetolista aux = cabeza;
         int Estado = 0;
@@ -68,9 +67,10 @@ public class Metodos {
             if (cabeza == null) {
                 return "La lista esta vacia, ingrese nuevas canciones";
             }
+            System.out.println("");
             while (aux != null) {
                 if (aux == actual && Estado == 0) {
-                    System.out.println(ROJO + "===================REPRODUCIENDO=====================" + RESET);
+                    System.out.println(ROJO + "===================REPRODUCIENDO======================" + RESET);
                     System.out.println(NEGRITA + ROJO + aux.getNombreCancion() + "||" + aux.getArtista() + RESET);
                     System.out.println(NEGRITA + ROJO + aux.getAlbum() + "||" + aux.getAnoLanzamiento() + RESET);
                     System.out.println(ROJO + "=======================[||]===========================" + RESET);
@@ -121,6 +121,9 @@ public class Metodos {
                 case 3:
                     buscarcancion(v, sc);
                     break;
+                case 4:
+                    eliminarcancion(sc, v);
+                    break;
                 case 5:
                     continuar = false;
                     break;
@@ -146,4 +149,59 @@ public class Metodos {
         return "Cancion no encontrada en la lista.";
     } // fin buscar
 
+    public String eliminarcancion(Scanner sc, Validaciones V) {
+        if (cabeza == null) {
+            return "La lista de reproduccion esta vacia.";
+        }
+
+        System.out.println("Ingresa el nombre de la cancion que deseas eliminar:");
+        String nombreBuscar = V.ValidarTexto(sc);
+
+        Objetolista aux = cabeza;
+
+        while (aux != null) {
+            if (nombreBuscar.equalsIgnoreCase(aux.getNombreCancion())) {
+
+
+                // mueve el reproductor actual
+                if (aux == actual) {
+                    if (actual.getSiguiente() != null) {
+                        actual = actual.getSiguiente();
+                    } else if (actual.getAnterior() != null) {
+                        actual = actual.getAnterior();
+                    } else {
+                        actual = null; // Era la unica que quedaba
+                    }
+                }
+
+                // 1. Es la unica cancion en toda la lista
+                if (aux == cabeza && aux == cola) {
+                    cabeza = null;
+                    cola = null;
+                }
+                // 2. Es la primera de la lista
+                else if (aux == cabeza) {
+                    cabeza = cabeza.getSiguiente();
+                    cabeza.setAnterior(null);
+                }
+                // 3.  Es la ultima de la lista (Cola)
+                else if (aux == cola) {
+                    cola = cola.getAnterior();
+                    cola.setSiguiente(null);
+                }
+                // 4. Esta en medio de la lista
+                else {
+                    Objetolista antes = aux.getAnterior();
+                    Objetolista despues = aux.getSiguiente();
+
+                    antes.setSiguiente(despues);
+                    despues.setAnterior(antes);
+                }
+                return "Se ha eliminado correctamente: " + aux.getNombreCancion();
+            }
+            aux = aux.getSiguiente();
+        }
+
+        return "No se encontro ninguna cancion con ese nombre.";
+    }
 }
